@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "998017424310",
+    "project_id": "lenguage-e30be",
+    "storage_bucket": "lenguage-e30be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998017424310:android:05ddf91420e052a7abbf17",
+        "android_client_info": {
+          "package_name": "com.example.lengage_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998017424310-celn6tn7sfrlagkpctq1s1qrqv8303o8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxnWiO4Xik-ZstcENRhOSdQ0y7iK3cv1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998017424310-celn6tn7sfrlagkpctq1s1qrqv8303o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
