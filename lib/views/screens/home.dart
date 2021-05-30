@@ -87,8 +87,8 @@ class _HomeState extends State<Home> {
         iOS: iOSPlatformChannelSpecifics);
     await flutterLocalNotificationsPlugin.periodicallyShow(
         0,
-        'Shopping cart',
-        'Looks like you liked this item, are you still interested to get it ?',
+        'Looks like you liked this item',
+        'Are you still interested to get it ? ',
         RepeatInterval.everyMinute,
         platformChannelSpecifics);
   }
