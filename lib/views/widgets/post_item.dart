@@ -29,6 +29,8 @@ class _PostItemState extends State<PostItem> {
     color: Colors.black54,
   );
   int favnumber = 0;
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +93,7 @@ class _PostItemState extends State<PostItem> {
                   );
                   favnumber = 0;
                 }
-                scheduleNotification();
+                notify('Item added to your list ');
               }),
             ),
           ],
@@ -101,25 +103,20 @@ class _PostItemState extends State<PostItem> {
     );
   }
 
-  Future<void> scheduleNotification() async {
-    var scheduledNotificationDateTime =
-        DateTime.now().add(Duration(seconds: 5));
-    var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+  Future<void> notify(String message) async {
+    final scheduledNotificationDateTime = DateTime.now();
+    final androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'channel id',
       'channel name',
       'channel description',
       icon: 'ic_launcher',
       largeIcon: DrawableResourceAndroidBitmap('ic_launcher'),
     );
-    var iOSPlatformChannelSpecifics = IOSNotificationDetails();
-    var platformChannelSpecifics = NotificationDetails(
+    final iOSPlatformChannelSpecifics = IOSNotificationDetails();
+    final platformChannelSpecifics = NotificationDetails(
         android: androidPlatformChannelSpecifics,
         iOS: iOSPlatformChannelSpecifics);
-    await flutterLocalNotificationsPlugin.schedule(
-        0,
-        'You saved it',
-        'Item added to your list',
-        scheduledNotificationDateTime,
-        platformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.schedule(0, 'Shopping cart', message,
+        scheduledNotificationDateTime, platformChannelSpecifics);
   }
 }

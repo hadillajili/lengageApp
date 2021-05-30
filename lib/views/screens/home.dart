@@ -7,6 +7,9 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:lengage_app/views/widgets/NewScreen.dart';
 import 'auth/login.dart';
 
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -56,7 +59,9 @@ class _HomeState extends State<Home> {
           Icons.add,
           color: Colors.white,
         ),
-        onPressed: () {},
+        onPressed: () {
+          reminder();
+        },
       ),
     );
   }
@@ -65,5 +70,26 @@ class _HomeState extends State<Home> {
     await auth
         .signOut()
         .then((value) => Navigate.pushPageReplacement(context, Login()));
+  }
+
+  Future<void> reminder() async {
+    final scheduledNotificationDateTime = DateTime.now();
+    final androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      'channel id',
+      'channel name',
+      'channel description',
+      icon: 'ic_launcher',
+      largeIcon: DrawableResourceAndroidBitmap('ic_launcher'),
+    );
+    final iOSPlatformChannelSpecifics = IOSNotificationDetails();
+    final platformChannelSpecifics = NotificationDetails(
+        android: androidPlatformChannelSpecifics,
+        iOS: iOSPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.periodicallyShow(
+        0,
+        'Shopping cart',
+        'Looks like you liked this item, are you still interested to get it ?',
+        RepeatInterval.everyMinute,
+        platformChannelSpecifics);
   }
 }
