@@ -73,7 +73,7 @@ class _ProfileState extends State<Profile> {
                   children: <Widget>[
                     _buildCategory("Posts"),
                     _buildCategory("Friends"),
-                    _buildCategory("Groups"),
+                    // _buildCategory("Groups"),
                   ],
                 ),
               ),
