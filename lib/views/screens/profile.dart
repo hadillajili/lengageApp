@@ -92,7 +92,7 @@ class _ProfileState extends State<Profile> {
                   return Padding(
                     padding: EdgeInsets.all(5.0),
                     child: Image.asset(
-                      "assets/images/cm${random.nextInt(10)}.jpeg",
+                      "assets/images/dm${random.nextInt(10)}.jpg",
                       fit: BoxFit.cover,
                     ),
                   );

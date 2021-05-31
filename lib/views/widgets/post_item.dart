@@ -66,6 +66,14 @@ class _PostItemState extends State<PostItem> {
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
             ),
+            Text(
+              "Item to Sell for 150£",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+              textAlign: TextAlign.start,
+            ),
             FlatButton(
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
