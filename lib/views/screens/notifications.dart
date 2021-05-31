@@ -15,14 +15,7 @@ class _NotificationsState extends State<Notifications> {
           "Notifications",
         ),
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.filter_list,
-            ),
-            onPressed: () {},
-          ),
-        ],
+        actions: <Widget>[],
       ),
       body: ListView.separated(
         padding: EdgeInsets.all(10),

@@ -153,7 +153,7 @@ class _ChatsState extends State<Chats>
                         controller: languageController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'expleee: fr, eng, it, etc',
+                          labelText: 'exp: fr, eng, it,ar..etc',
                         ),
                         style: TextStyle(
                           color: Colors.red,

@@ -48,7 +48,7 @@ class _ProfileState extends State<Profile> {
                 children: <Widget>[
                   FlatButton(
                     child: Icon(
-                      Icons.star_purple500_sharp,
+                      Icons.shopping_bag_outlined,
                       color: Colors.white,
                     ),
                     color: Colors.grey,

@@ -22,6 +22,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.filter_list,
+          ),
+          onPressed: () {},
+        ),
         title: Text("Feeds"),
         centerTitle: true,
         actions: <Widget>[
